@@ -1,3 +1,4 @@
 <resources>
+    <string name="save">Lưu</string>
     <string name="app_name">MidTest</string>
 </resources>

@@ -1,84 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/background_color"
     android:padding="16dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-
-        <View
-            android:id="@+id/fetchImage1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/logo"
-            app:layout_constraintEnd_toEndOf="@+id/logo"
-            app:layout_constraintStart_toStartOf="@+id/logo"
-            app:layout_constraintTop_toTopOf="@+id/logo" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/logo"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/ic_camera"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <EditText
-        android:id="@+id/etMaDonVi"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mã đơn vị (ID)" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/etTenDonVi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tên đơn vị" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/etWebsite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Website (tùy chọn)" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/logo"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_camera"
+                    app:civ_border_color="@android:color/black"
+                    app:civ_border_width="2dp" />
 
-    <EditText
-        android:id="@+id/etDiaChi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Địa chỉ" />
+                <EditText
+                    android:id="@+id/etMaDonVi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mã đơn vị (ID)"
+                    android:padding="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_color"
+                    android:layout_marginBottom="12dp" />
 
-    <EditText
-        android:id="@+id/etSoDienThoai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Số điện thoại" />
+                <EditText
+                    android:id="@+id/etTenDonVi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tên đơn vị"
+                    android:padding="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_color"
+                    android:layout_marginBottom="12dp" />
 
-    <EditText
-        android:id="@+id/etMaDonViCha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mã đơn vị cha (nếu có)" />
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:padding="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_color"
+                    android:layout_marginBottom="12dp" />
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lưu" />
-</LinearLayout>
+                <EditText
+                    android:id="@+id/etWebsite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Website (tùy chọn)"
+                    android:padding="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_color"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etDiaChi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Địa chỉ"
+                    android:padding="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_color"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etSoDienThoai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Số điện thoại"
+                    android:padding="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_color"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etMaDonViCha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mã đơn vị cha (nếu có)"
+                    android:padding="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hint_color"
+                    android:layout_marginBottom="12dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lưu"
+            android:padding="16dp"
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

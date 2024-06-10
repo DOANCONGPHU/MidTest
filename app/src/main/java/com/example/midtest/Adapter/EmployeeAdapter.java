@@ -1,5 +1,6 @@
 package com.example.midtest.Adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,19 +36,35 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
     @Override
     public void onBindViewHolder(@NonNull EmployeeViewHolder holder, int position) {
         EmployeeModel employee = employees.get(position);
-        holder.tvEmployeeName.setText(employee.getHoTen());
 
-        // Load image using Glide
-        Glide.with(holder.itemView.getContext())
-                .load(employee.getImageUrl())
-                .into(holder.ivEmployeeImage);
+        // Đảm bảo tên nhân viên không null
+        if (employee.getHoTen() != null) {
+            holder.tvEmployeeName.setText(employee.getHoTen());
+        } else {
 
-        holder.itemView.setOnClickListener(v -> onItemClickListener.onItemClick(position));
+        }
+
+        // Đảm bảo URL hình ảnh không null hoặc trống
+        if (employee.getImageUrl() != null && !employee.getImageUrl().isEmpty()) {
+            Glide.with(holder.itemView.getContext())
+                    .load(employee.getImageUrl())
+                    .placeholder(R.drawable.ic_person) // Hình ảnh chờ
+                    .into(holder.ivEmployeeImage);
+        } else {
+            holder.ivEmployeeImage.setImageResource(R.drawable.ic_person); // Hình ảnh mặc định
+        }
+
+        // Đặt trình nghe sự kiện click
+        holder.itemView.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(position);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return employees.size();
+        return employees != null ? employees.size() : 0;
     }
 
     public interface OnItemClickListener {
@@ -61,7 +78,11 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
         public EmployeeViewHolder(@NonNull View itemView) {
             super(itemView);
             tvEmployeeName = itemView.findViewById(R.id.NAME);
-            ivEmployeeImage = itemView.findViewById(R.id.avatar);
+            ivEmployeeImage = itemView.findViewById(R.id.image_topic);
+            if (ivEmployeeImage == null) {
+                Log.e("EmployeeViewHolder", "ivEmployeeImage is null");
+            }
         }
     }
 }
+

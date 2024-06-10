@@ -44,7 +44,7 @@ public class EmployeeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         employeeAdapter = new EmployeeAdapter(employees, position -> {
-            // Xử lý click vào nhân viên (chuyển tới màn hình chi tiết, ...)
+
         });
         recyclerView.setAdapter(employeeAdapter);
 

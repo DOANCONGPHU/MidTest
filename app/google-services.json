@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "213364892305",
+    "project_id": "lamgiau-83600",
+    "storage_bucket": "lamgiau-83600.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213364892305:android:add503cc1c23cf2296d530",
+        "android_client_info": {
+          "package_name": "com.example.midtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213364892305-d76s9uohat2t4ldcof4347f38gs1cu6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqZU7eth7GspukizoUsZwTldAwfICbVF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213364892305-d76s9uohat2t4ldcof4347f38gs1cu6g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
